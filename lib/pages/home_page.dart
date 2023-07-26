@@ -1,3 +1,4 @@
+import 'package:exemplo_flutter_navigator/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,8 +11,17 @@ class HomePage extends StatelessWidget {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text('Home Page'),
         ),
-        body: const Center(
-          child: Text('Home Page'),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SettingsPage(),
+                  ));
+            },
+            child: const Text('Settings Page'),
+          ),
         ));
   }
 }
